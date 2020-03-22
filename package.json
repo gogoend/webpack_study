@@ -1,5 +1,8 @@
 {
   "name": "webpack_study",
+  "sideEffects": [
+    "/src/math.js"
+  ],
   "version": "1.0.0",
   "description": "",
   "private": true,
