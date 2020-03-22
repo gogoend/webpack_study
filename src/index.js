@@ -1,5 +1,11 @@
 import { cube } from './math.js';
 
+if (process.env.NODE_ENV !== 'production') {
+    console.log('开发环境');
+}else{
+    console.log('生产环境');
+}
+
 function component() {
     var element = document.createElement('pre');
 
