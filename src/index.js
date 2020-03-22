@@ -14,11 +14,15 @@ function component() {
     return element;
 }
 
-document.body.appendChild(component());
+let element = component(); // 存储 element，以在 print.js 修改时重新渲染
+document.body.appendChild(element);
 
- if (module.hot) {
-   module.hot.accept('./print.js', function() {
-     console.log('Accepting the updated printMe module!');
-     printMe();
-   })
+if (module.hot) {
+    module.hot.accept('./print.js', function () {
+        console.log('Accepting the updated printMe module!');
+        // 文件发生变化必须重新渲染相关元素，以便更新方法
+        document.body.removeChild(element);
+        element = component(); // 重新渲染 "component"，以便更新 click 事件处理函数
+        document.body.appendChild(element);
+    })
 }
