@@ -1,0 +1,9 @@
+html, body{
+    padding: 0;
+}
+body {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat no-repeat;
+    background-image: conic-gradient(#f00,rgb(255, 128, 0),#f00);
+}
